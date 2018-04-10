@@ -2,15 +2,22 @@
     <div class="fondo"></div>
     <div class="mascara"></div>
     <div class="container-fluid">
-        <div class="row align-items-centers justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-lg-2">
-                <h3 class="text-lg-right">github.com/</h3>
+                <h3 class="text-lg-right mb-3">github.com/</h3>
             </div>
             <div class="col-lg-4">
-                <input class="form-control" type="text" placeholder="Nombre de usuario">
+                <input class="form-control mb-3" [(ngModel)]="userName" type="text" placeholder="Nombre de usuario">
             </div>
             <div class="col-lg-1">
-                <button class="btn btn-transparent w-100">Buscar</button>
+                <button class="btn btn-transparent w-100 mb-3" (click)="buscar()">Buscar</button>
+            </div>
+        </div>
+        <div class="row justify-content-center" *ngIf="repos">
+            <div class="col-lg-3">
+                <ul>
+                    <li *ngFor="let repo of repos">{{ repo }}</li>
+                </ul>
             </div>
         </div>
     </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../github.service';
+
 
 @Component({
   selector: 'app-busqueda',
@@ -6,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./busqueda.component.css']
 })
 export class BusquedaComponent implements OnInit {
-  constructor() { }
-
+  userName : string;
+  repos: Array<string> = [];
+  
+  constructor(private servicio: GithubService) { }
+  
   ngOnInit() {
   }
 
+  buscar(){
+    this.servicio.getRepos(this.userName).subscribe(repos => {
+      this.repos = repos.map(item => item.name);
+    });
+  }
 }
