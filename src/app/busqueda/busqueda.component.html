@@ -21,7 +21,7 @@
         <div class="row justify-content-center" *ngIf="repos">
             <div class="col-lg-4">
                 <ul>
-                    <li *ngFor="let repo of repos"><a href="#">{{ repo }}</a></li>
+                    <li *ngFor="let repo of repos"><a target="_blank" href="{{ 'https://github.com/' + saveUserName + '/' + repo }}">{{ repo }}</a></li>
                 </ul>
             </div>
         </div>

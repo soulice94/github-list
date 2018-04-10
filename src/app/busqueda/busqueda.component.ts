@@ -11,6 +11,7 @@ export class BusquedaComponent implements OnInit {
   userName : string;
   repos: Array<string> = null;
   error = false;
+  saveUserName: string;
   
   constructor(private servicio: GithubService) { }
   
@@ -22,6 +23,7 @@ export class BusquedaComponent implements OnInit {
       repos => {
         this.repos = repos.map(item => item.name);
         this.error = false;
+        this.saveUserName = this.userName;
       }, error => {
         if(error.status == 404){
           this.error = true;
