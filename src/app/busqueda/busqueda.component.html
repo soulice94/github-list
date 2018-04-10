@@ -14,9 +14,9 @@
             </div>
         </div>
         <div class="row justify-content-center" *ngIf="repos">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <ul>
-                    <li *ngFor="let repo of repos">{{ repo }}</li>
+                    <li *ngFor="let repo of repos"><a href="#">{{ repo }}</a></li>
                 </ul>
             </div>
         </div>

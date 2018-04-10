@@ -9,7 +9,7 @@ import { GithubService } from '../github.service';
 })
 export class BusquedaComponent implements OnInit {
   userName : string;
-  repos: Array<string> = [];
+  repos: Array<string> = null;
   
   constructor(private servicio: GithubService) { }
   
