@@ -23,7 +23,7 @@ div.mascara{
     display: flex;
     align-items: center;
 }
-h3{
+h3, h4{
     color: white;
 }
 input[type="text"]{
@@ -41,8 +41,9 @@ ul{
     list-style-type: none;
     margin: 0;
     padding: 10px;
-    border-radius: 10%;
     color: white;
+    max-height: 50vh;
+    overflow: scroll;
 }
 li{
     border-color: white;
